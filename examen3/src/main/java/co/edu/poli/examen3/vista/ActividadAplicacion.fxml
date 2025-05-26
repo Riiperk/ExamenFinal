@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="843.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.poli.examen3.controlador.ControladorActividad">
+   <children>
+      <GridPane layoutX="62.0" layoutY="74.0" prefHeight="300.0" prefWidth="351.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Código" />
+            <Label text="Nombre" GridPane.rowIndex="1" />
+            <Label text="Fecha realización dd/mm/aaaa" GridPane.rowIndex="2" />
+            <Label text="Duración (hrs)" GridPane.rowIndex="3" />
+            <Label text="Tipo Actividad" GridPane.rowIndex="4" />
+            <Label text="Número Sesión" GridPane.rowIndex="5" />
+            <Label text="Nivel Práctico" GridPane.rowIndex="6" />
+            <Label text="ID Recurso" GridPane.rowIndex="7" />
+            <Label text="Nombre del Recurso" GridPane.rowIndex="8" />
+            <Label text="Proveedor" GridPane.rowIndex="9" />
+            <TextField fx:id="txtCodigo" promptText="ej. A001" GridPane.columnIndex="1" />
+            <TextField fx:id="txtNombre" promptText="Nombre actividad" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <DatePicker fx:id="dpFecha" promptText="Seleccionar fecha" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="txtDuracion" promptText="Duración en horas" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <ComboBox fx:id="cbTipoActividad" prefHeight="25.0" prefWidth="184.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="txtNumeroSesion" promptText="Sólo para Clase" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <ComboBox fx:id="cbNivelPractico" prefHeight="25.0" prefWidth="178.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <TextField fx:id="txtRecursoID" promptText="ID Recurso" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <TextField fx:id="txtRecursoNombre" promptText="Nombre Recurso" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <TextField fx:id="txtProveedor" promptText="Proveedor Recurso" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+         </children>
+      </GridPane>
+      <TableView fx:id="tableActividades" layoutX="14.0" layoutY="400.0" prefHeight="429.0" prefWidth="961.0">
+         <columns>
+            <TableColumn fx:id="colCodigo" prefWidth="114.0" text="Código" />
+            <TableColumn fx:id="colNombre" prefWidth="105.0" text="Nombre" />
+            <TableColumn fx:id="colFecha" prefWidth="85.0" text="Fecha" />
+            <TableColumn fx:id="colDuracion" prefWidth="80.0" text="Duración" />
+            <TableColumn fx:id="colTipoActividad" prefWidth="80.0" text="Tipo" />
+            <TableColumn fx:id="colNumeroSesion" prefWidth="75.0" text="Sesión" />
+            <TableColumn fx:id="colNivelPractico" prefWidth="96.0" text="Nivel" />
+            <TableColumn fx:id="colRecursoID" prefWidth="98.0" text="Recurso ID" />
+            <TableColumn fx:id="colRecursoNombre" prefWidth="113.0" text="Recurso Nombre" />
+            <TableColumn fx:id="colProveedor" prefWidth="113.0" text="Proveedor" />
+         </columns>
+      </TableView>
+      <Button fx:id="bttCreate" layoutX="528.0" layoutY="111.0" onAction="#crear" prefHeight="35.0" prefWidth="109.0" text="Crear" />
+      <Button fx:id="bttRead" layoutX="705.0" layoutY="111.0" onAction="#leer" prefHeight="35.0" prefWidth="109.0" text="Leer" />
+      <Button fx:id="bttUpdate" layoutX="529.0" layoutY="216.0" onAction="#actualizar" prefHeight="35.0" prefWidth="107.0" text="Actualizar" />
+      <Button fx:id="bttDelete" layoutX="705.0" layoutY="216.0" onAction="#eliminar" prefHeight="35.0" prefWidth="109.0" text="Eliminar" />
+      <Button fx:id="bttReadAll" layoutX="528.0" layoutY="261.0" onAction="#leerTodo" prefHeight="35.0" prefWidth="287.0" text="Leer Todo" />
+      <Button fx:id="bttSerializar" layoutX="529.0" layoutY="319.0" onAction="#serializar" prefHeight="55.0" prefWidth="117.0" text="Serializar" />
+      <Button fx:id="bttDeserializar" layoutX="696.0" layoutY="319.0" onAction="#deserializar" prefHeight="55.0" prefWidth="117.0" text="Deserializar" />
+      <Label layoutX="545.0" layoutY="45.0" text="Gestion Actividades">
+         <font>
+            <Font name="Book Antiqua Bold" size="30.0" />
+         </font>
+      </Label>
+      <Button fx:id="bttReadTaller" layoutX="705.0" layoutY="163.0" onAction="#leertaller" prefHeight="35.0" prefWidth="109.0" text="Listar Talleres" />
+      <Button fx:id="bttReadClase" layoutX="528.0" layoutY="163.0" onAction="#leerclase" prefHeight="35.0" prefWidth="109.0" text="Listar Clases" />
+   </children>
+</AnchorPane>
