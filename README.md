@@ -32,3 +32,4 @@ En la carpeta DOC se encuentra el javadoc de la aplicación.
 el codigo se subio al repositorio directamente desde Eclipse
 
 Como ultimo enlace del video con su funcionamiento:
+https://www.youtube.com/watch?v=7Z_zWwvH4JQ
